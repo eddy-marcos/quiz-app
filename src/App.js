@@ -22,7 +22,9 @@ class App extends React.Component {
       <>
         <h1>O duis welcome quibusdam.</h1>
         <p>instructions Commodo irure aut pariatur concursionibus.</p>
-        <RenderQuiz state={this.state.quizes}/>
+        <RenderQuiz
+          state={this.state.quizes}
+          />
       </>
     );
 

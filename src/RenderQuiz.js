@@ -6,19 +6,20 @@ const handleRadioCheck = (radioTarget, answer) => {
 
   // by default all radios come unchecked
   if(correctAnswer === radioValue) {
-    // console.log('true');
+    console.log('true');
     return true;
   }
-
-  // console.log('false');
+  console.log('false');
   return false;
+}
+
+const submit = () => {
+    console.log('submit');
 }
 
 const RenderQuiz = (props) => {
   return (
-      props.state.map(d => {
-        // console.log('d ', d);
-
+    props.state.map(d => {
         return(
           <div key={d.question}>
             <p>{d.question} {d.description}</p>
@@ -34,31 +35,33 @@ const RenderQuiz = (props) => {
                 https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/radio
                 */}
 
-           {/*on click add the "checked" attr, then evalueate the value*/}
-
-          <div>
-            <input type="radio" id="option1" name="quiz" value="a"
+           <div>
+            <input type="radio" id="option1" name={d.question} value="a"
               onClick={(e)=>handleRadioCheck(e.target, d.correctAnswer)}
-              />
+              defaultChecked/>
               <label htmlFor="option1">{d.options['a']}</label>
           </div>
           <div>
-            <input type="radio" id="option2" name="quiz" value="b"
+            <input type="radio" id="option2" name={d.question} value="b"
               onClick={(e)=>handleRadioCheck(e.target, d.correctAnswer)}
               />
               <label htmlFor="option2">{d.options['b']}</label>
           </div>
           <div>
-            <input type="radio" id="option3" name="quiz" value="c"
+            <input type="radio" id="option3" name={d.question} value="c"
               onClick={(e)=>handleRadioCheck(e.target, d.correctAnswer)}
               />
               <label htmlFor="option3">{d.options['c']}</label>
           </div>
           <div>
-            <input type="radio" id="option4" name="quiz" value="d"
+            <input type="radio" id="option4" name={d.question} value="d"
               onClick={(e)=>handleRadioCheck(e.target, d.correctAnswer)}
               />
               <label htmlFor="option4">{d.options['d']}</label>
+          </div>
+
+          <div className="result">
+            <button onClick={submit}>Submit</button>
           </div>
         </div>
         )
