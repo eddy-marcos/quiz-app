@@ -16,7 +16,7 @@ const data = [
       "c": "question1 option c",
       "d": "question1 option d"
     },
-    "correctAnswer" : "b"
+    "correctAnswer" : "a"
   },
   {
     "question": 2,
@@ -38,7 +38,7 @@ const data = [
       "c": "question3 option c",
       "d": "question3 option d"
     },
-    "correctAnswer" : "b"
+    "correctAnswer" : "c"
   },
   {
     "question": 4,
@@ -49,7 +49,7 @@ const data = [
       "c": "question4 option c",
       "d": "question4 option d"
     },
-    "correctAnswer" : "b"
+    "correctAnswer" : "d"
   },
   {
     "question": 5,
@@ -60,7 +60,7 @@ const data = [
       "c": "question5 option c",
       "d": "question5 option d"
     },
-    "correctAnswer" : "b"
+    "correctAnswer" : "a"
   }
 ]
 

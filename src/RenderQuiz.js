@@ -4,17 +4,18 @@ const handleRadioCheck = (radioTarget, answer) => {
   let radioValue = radioTarget.value;
   let correctAnswer = answer;
 
-  // by default all radios come unchecked
   if(correctAnswer === radioValue) {
-    console.log('true');
+    // console.log('true');
     return true;
   }
-  console.log('false');
+  // console.log('false');
   return false;
 }
 
-const submit = () => {
-    console.log('submit');
+const submit = (event, answer) => {
+    event.preventDefault();
+    // console.log('answer ', answer);
+    // need to get the checked input value
 }
 
 const RenderQuiz = (props) => {
@@ -34,7 +35,7 @@ const RenderQuiz = (props) => {
                 attribute to associate the labels with the radio buttons.
                 https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/radio
                 */}
-
+          <form onSubmit={e => submit(e, d.correctAnswer)}>
            <div>
             <input type="radio" id="option1" name={d.question} value="a"
               onClick={(e)=>handleRadioCheck(e.target, d.correctAnswer)}
@@ -60,10 +61,11 @@ const RenderQuiz = (props) => {
               <label htmlFor="option4">{d.options['d']}</label>
           </div>
 
-          <div className="result">
-            <button onClick={submit}>Submit</button>
+          <div>
+            <input type="submit" value="Submit"/>
           </div>
-        </div>
+        </form>
+      </div>
         )
       })
   );
