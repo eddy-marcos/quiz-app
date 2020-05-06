@@ -23,15 +23,12 @@ const RenderQuiz = (props) => {
   const handleNext = () => {
     if (props.activeItem < props.state.length) {
       props.updateActiveItem(props.activeItem+1);
-
-      setTimeout(() => {
-        props.updateResult('');
-      }, 10);
+      props.updateResult('');
     }
   }
 
   const resetQuiz = () => {
-    console.log('resetQuiz');
+    props.updateActiveItem(1);
   }
 
     return (
