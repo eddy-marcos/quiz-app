@@ -65,9 +65,7 @@ const data = [
 ]
 
 ReactDOM.render(
-  <React.StrictMode>
-   <App quizData={data}/>
-  </React.StrictMode>,
+   <App quizData={data}/>,
   document.getElementById('root')
 );
 
