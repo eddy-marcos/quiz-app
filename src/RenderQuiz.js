@@ -23,7 +23,15 @@ const RenderQuiz = (props) => {
   const handleNext = () => {
     if (props.activeItem < props.state.length) {
       props.updateActiveItem(props.activeItem+1);
+
+      setTimeout(() => {
+        props.updateResult('');
+      }, 10);
     }
+  }
+
+  const resetQuiz = () => {
+    console.log('resetQuiz');
   }
 
     return (
@@ -32,7 +40,6 @@ const RenderQuiz = (props) => {
             <div key={d.question} style={{display: props.activeItem === d.question ? 'block' : 'none'}}>
               <p>{d.question} {d.description}</p>
 
-              <form onSubmit={e => handleSubmit(e, d.correctAnswer)}>
                    <div>
                     <input type="radio" id="option1" name={d.question} value={d.question}
                       checked={props.currentChecked === "optionA" && props.activeItem === d.question}
@@ -61,13 +68,15 @@ const RenderQuiz = (props) => {
                       />
                       <label htmlFor="option4">{d.options['d']}</label>
                   </div>
+
                   <div>
-                    <input type="submit" value="Submit"/>
+                    <button className="submit-btn"
+                      onClick={event => handleSubmit(event, d.correctAnswer)}
+                      >Listo</button>
+                    <button className="next-btn" onClick={handleNext}>Siguiente</button>
+                    <button className="reset-btn" onClick={resetQuiz}>Otra Vez</button>
                 </div>
                   <span className="result">{props.currentResult}</span>
-              </form>
-
-              <button className="next-btn" onClick={handleNext}>Siguiente</button>
         </div>
           )
         })

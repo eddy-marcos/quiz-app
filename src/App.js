@@ -45,17 +45,19 @@ class App extends React.Component {
   render(){
     return (
       <div className="container">
-        <h1>O duis welcome quibusdam.</h1>
-        <p>instructions Commodo irure aut pariatur concursionibus.</p>
-        <RenderQuiz
-          state={this.state.quizes}
-          updateChecked={this.updateRadioState}
-          currentChecked={this.state.checkedRadio}
-          currentResult={this.state.result}
-          updateResult={this.updateResult}
-          activeItem={this.state.activeQuestion}
-          updateActiveItem={this.updateActiveQuestion}
-          />
+      {/*  <h1>Bienvenido al Quiz</h1> */}
+        <section>
+          <p>Selecciona una opción:</p>
+          <RenderQuiz
+            state={this.state.quizes}
+            updateChecked={this.updateRadioState}
+            currentChecked={this.state.checkedRadio}
+            currentResult={this.state.result}
+            updateResult={this.updateResult}
+            activeItem={this.state.activeQuestion}
+            updateActiveItem={this.updateActiveQuestion}
+            />
+        </section>
       </div>
     );
 

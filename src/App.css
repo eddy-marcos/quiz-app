@@ -1,3 +1,12 @@
-.hidden {
-  display: none;
+h1 {
+  text-align: center;
+}
+
+section {
+  margin-left: 20px;
+}
+
+button {
+  /* position: absolute;
+  right: 50px; */
 }
