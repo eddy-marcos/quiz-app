@@ -8,10 +8,12 @@ class App extends React.Component {
 
     this.state = {
       quizes: [],
-      checkedRadio: 'option1'
+      checkedRadio: 'optionA',
+      result: ''
     }
 
     this.updateRadioState = this.updateRadioState.bind(this);
+    this.updateResult = this.updateResult.bind(this);
   }
 
   componentDidMount() {
@@ -26,6 +28,12 @@ class App extends React.Component {
     });
   }
 
+   updateResult(result){
+    this.setState({
+      result
+    });
+  }
+
   render(){
     return (
       <>
@@ -35,6 +43,8 @@ class App extends React.Component {
           state={this.state.quizes}
           updateChecked={this.updateRadioState}
           currentChecked={this.state.checkedRadio}
+          currentResult={this.state.result}
+          updateResult={this.updateResult}
           />
       </>
     );

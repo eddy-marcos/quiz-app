@@ -16,51 +16,7 @@ const data = [
       "c": "question1 option c",
       "d": "question1 option d"
     },
-    "correctAnswer" : "a"
-  },
-  {
-    "question": 2,
-    "description": "this is question 2",
-    "options": {
-      "a": "question2 option a",
-      "b": "question2 option b",
-      "c": "question2 option c",
-      "d": "question2 option d"
-    },
-    "correctAnswer" : "b"
-  },
-  {
-    "question": 3,
-    "description": "this is question 3",
-    "options": {
-      "a": "question3 option a",
-      "b": "question3 option b",
-      "c": "question3 option c",
-      "d": "question3 option d"
-    },
-    "correctAnswer" : "c"
-  },
-  {
-    "question": 4,
-    "description": "this is question 4",
-    "options": {
-      "a": "question4 option a",
-      "b": "question4 option b",
-      "c": "question4 option c",
-      "d": "question4 option d"
-    },
-    "correctAnswer" : "d"
-  },
-  {
-    "question": 5,
-    "description": "this is question 5",
-    "options": {
-      "a": "question5 option a",
-      "b": "question5 option b",
-      "c": "question5 option c",
-      "d": "question5 option d"
-    },
-    "correctAnswer" : "a"
+    "correctAnswer" : "optionA"
   }
 ]
 

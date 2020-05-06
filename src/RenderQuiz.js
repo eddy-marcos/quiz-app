@@ -2,69 +2,64 @@ import React from 'react';
 
 class RenderQuiz extends React.Component {
 
-   handleRadioCheck(radioTarget, answer, option) {
-    let radioValue = radioTarget.value;
-    let correctAnswer = answer;
-    console.log('option ', option);
+   handleRadioCheck(option) {
     this.props.updateChecked(option);
-
-    if(correctAnswer === radioValue) {
-      // console.log('true');
-        return true;
-    }
-    // console.log('false');
-    return false;
   }
 
    handleSubmit(event, answer) {
       event.preventDefault();
-      // console.log('answer ', answer);
-      // need to get the checked input value
-      console.log(this.element);
+
+      if (this.props.currentChecked === answer) {
+        // console.log('true');
+        this.props.updateResult('Excelente! :)');
+        return true;
+      }
+
+      // console.log('false');
+      this.props.updateResult('Intenta de nuevo.');
+      return false;
   }
 
   render(props) {
-    // console.log(this.props.updateChecked);
-
     return (
       this.props.state.map(d => {
           return(
             <div key={d.question}>
               <p>{d.question} {d.description}</p>
 
-              <form onSubmit={e => this.handleSubmit(e, d.correctAnswer)}
-                ref={e=>this.element = e}>
+              <form onSubmit={e => this.handleSubmit(e, d.correctAnswer)}>
                    <div>
                     <input type="radio" id="option1" name={d.question} value={d.question}
-                      checked={this.props.currentChecked === "option1"}
-                      onChange={(e)=>this.handleRadioCheck(e.target, d.correctAnswer, "option1")}
+                      checked={this.props.currentChecked === "optionA"}
+                      onChange={e => this.handleRadioCheck("optionA")}
                       />
                       <label htmlFor="option1">{d.options['a']}</label>
                   </div>
                   <div>
                     <input type="radio" id="option2" name={d.question} value={d.question}
-                      checked={this.props.currentChecked === "option2"}
-                      onChange={(e)=>this.handleRadioCheck(e.target, d.correctAnswer, "option2")}
+                      checked={this.props.currentChecked === "optionB"}
+                      onChange={e => this.handleRadioCheck("optionB")}
                       />
                       <label htmlFor="option2">{d.options['b']}</label>
                   </div>
                   <div>
                     <input type="radio" id="option3" name={d.question} value={d.question}
-                      checked={this.props.currentChecked === "option3"}
-                      onChange={(e)=>this.handleRadioCheck(e.target, d.correctAnswer, "option3")}
+                      checked={this.props.currentChecked === "optionC"}
+                      onChange={e => this.handleRadioCheck("optionC")}
                       />
                       <label htmlFor="option3">{d.options['c']}</label>
                   </div>
                   <div>
                     <input type="radio" id="option4" name={d.question} value={d.question}
-                      checked={this.props.currentChecked === "option4"}
-                      onChange={(e)=>this.handleRadioCheck(e.target, d.correctAnswer, "option4")}
+                      checked={this.props.currentChecked === "optionD"}
+                      onChange={e => this.handleRadioCheck("optionD")}
                       />
                       <label htmlFor="option4">{d.options['d']}</label>
                   </div>
                   <div>
                     <input type="submit" value="Submit"/>
-                  </div>
+                </div>
+                  <span className="result">{this.props.currentResult}</span>
               </form>
         </div>
           )
