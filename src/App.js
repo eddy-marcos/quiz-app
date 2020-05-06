@@ -7,13 +7,22 @@ class App extends React.Component {
     super(props);
 
     this.state = {
-      quizes: []
+      quizes: [],
+      checkedRadio: 'option1'
     }
+
+    this.updateRadioState = this.updateRadioState.bind(this);
   }
 
   componentDidMount() {
     this.setState({
       quizes: this.props.quizData
+    });
+  }
+
+   updateRadioState(option){
+    this.setState({
+      checkedRadio: option
     });
   }
 
@@ -24,6 +33,8 @@ class App extends React.Component {
         <p>instructions Commodo irure aut pariatur concursionibus.</p>
         <RenderQuiz
           state={this.state.quizes}
+          updateChecked={this.updateRadioState}
+          currentChecked={this.state.checkedRadio}
           />
       </>
     );
