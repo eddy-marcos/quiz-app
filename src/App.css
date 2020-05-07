@@ -1,12 +1,38 @@
-h1 {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@300&display=swap');
+
+/* A common best practice is to define custom properties on the :root pseudo-class,
+so that it can be applied globally across your HTML document:
+you use the custom property value by specifying your custom property name inside the var() function,
+in place of a regular property value:
+https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties
+*/
+:root {
+  --green: #58b4ae;
+  --yellow: #ffe277;
+  --orange: #ffb367;
+  --pink: #ffe2bc;
 }
 
-section {
+body {
+  font-family: 'Inconsolata', monospace;
+  background-color: #707070;
   margin-left: 20px;
 }
 
+h1 {
+  color: var(--yellow);
+}
+
+section {
+  color: #fff;
+  font-size: 25px;
+}
+
 button {
-  /* position: absolute;
-  right: 50px; */
+  color: #fff;
+  font-family: inherit;
+  font-weight: bolder;
+  margin: 20px 20px 20px 0;
+  padding: 10px 20px;
+  background-color: #58b4ae;
 }

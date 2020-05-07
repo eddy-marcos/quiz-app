@@ -9,58 +9,58 @@ import * as serviceWorker from './serviceWorker';
 const data = [
   {
     "question": 1,
-    "description": "Yo vivo en _____________",
+    "description": "La suma de 8 + 2 es?",
     "options": {
-      "a": "Panama",
-      "b": "Costa Rica",
-      "c": "Turrialba",
-      "d": "Estados Unidos"
-    },
-    "correctAnswer" : "optionB"
-  },
-  {
-    "question": 2,
-    "description": "Cuáles es el orden de las vocales?",
-    "options": {
-      "a": "a e i u o",
-      "b": "e i o u a",
-      "c": "a e i o u",
-      "d": "o e i o u"
+      "a": "8",
+      "b": "7",
+      "c": "10",
+      "d": "11"
     },
     "correctAnswer" : "optionC"
   },
   {
-    "question": 3,
-    "description": "En que provincia vivo Yo?",
+    "question": 2,
+    "description": "Para comer utilizo el sentido de_____",
     "options": {
-      "a": "Puntarenas",
-      "b": "Cartagp",
-      "c": "Guanacaste",
-      "d": "SanJosé"
+      "a": "olfato",
+      "b": "audición",
+      "c": "vista",
+      "d": "gusto"
     },
     "correctAnswer" : "optionD"
   },
   {
-    "question": 4,
-    "description": "La última letra del Abecedario es?",
+    "question": 3,
+    "description": "En que parte del cuerpo están las piernas?",
     "options": {
-      "a": "Z",
-      "b": "Y",
-      "c": "X",
-      "d": "A"
+      "a": "Estremidades Inferiores",
+      "b": "Cabeza",
+      "c": "Estremidades superiores",
+      "d": "tronco"
     },
     "correctAnswer" : "optionA"
   },
   {
-    "question": 5,
-    "description": "La suma de 2 + 3 es?",
+    "question": 4,
+    "description": "Complete la palabra. Cu__po",
     "options": {
-      "a": "6",
-      "b": "3",
-      "c": "5",
-      "d": "7"
+      "a": "la",
+      "b": "ez",
+      "c": "do",
+      "d": "er"
     },
-    "correctAnswer" : "optionC"
+    "correctAnswer" : "optionD"
+  },
+  {
+    "question": 5,
+    "description": "My name is____",
+    "options": {
+      "a": "Meybel",
+      "b": "Aaron",
+      "c": "Eddy",
+      "d": "María"
+    },
+    "correctAnswer" : "optionB"
   }
 ]
 

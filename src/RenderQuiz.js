@@ -36,7 +36,7 @@ const RenderQuiz = (props) => {
       props.state.map(d => {
           return(
             <div key={d.question} style={{display: props.activeItem === d.question ? 'block' : 'none'}}>
-              <p>{d.question} {d.description}</p>
+              <p>{d.question}. {d.description}</p>
 
                    <div>
                     <input type="radio" id="option1" name={d.question} value={d.question}
