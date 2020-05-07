@@ -9,56 +9,56 @@ import * as serviceWorker from './serviceWorker';
 const data = [
   {
     "question": 1,
-    "description": "Yo vivo en_____________",
+    "description": "Yo vivo en _____________",
     "options": {
       "a": "Panama",
-      "b": "Estados Unidos",
+      "b": "Costa Rica",
       "c": "Turrialba",
-      "d": "Costa Rica"
-    },
-    "correctAnswer" : "optionD"
-  },
-  {
-    "question": 2,
-    "description": "this is question 2",
-    "options": {
-      "a": "question2 option a",
-      "b": "question2 option b",
-      "c": "question2 option c",
-      "d": "question2 option d"
+      "d": "Estados Unidos"
     },
     "correctAnswer" : "optionB"
   },
   {
-    "question": 3,
-    "description": "this is question 3",
+    "question": 2,
+    "description": "Cuáles es el orden de las vocales?",
     "options": {
-      "a": "question3 option a",
-      "b": "question3 option b",
-      "c": "question3 option c",
-      "d": "question3 option d"
+      "a": "a e i u o",
+      "b": "e i o u a",
+      "c": "a e i o u",
+      "d": "o e i o u"
     },
     "correctAnswer" : "optionC"
   },
   {
-    "question": 4,
-    "description": "this is question 4",
+    "question": 3,
+    "description": "En que provincia vivo Yo?",
     "options": {
-      "a": "question4 option a",
-      "b": "question4 option b",
-      "c": "question4 option c",
-      "d": "question4 option d"
+      "a": "Puntarenas",
+      "b": "Cartagp",
+      "c": "Guanacaste",
+      "d": "SanJosé"
     },
     "correctAnswer" : "optionD"
   },
   {
-    "question": 5,
-    "description": "this is question 5",
+    "question": 4,
+    "description": "La última letra del Abecedario es?",
     "options": {
-      "a": "question5 option a",
-      "b": "question5 option b",
-      "c": "question5 option c",
-      "d": "question5 option d"
+      "a": "Z",
+      "b": "Y",
+      "c": "X",
+      "d": "A"
+    },
+    "correctAnswer" : "optionA"
+  },
+  {
+    "question": 5,
+    "description": "La suma de 2 + 3 es?",
+    "options": {
+      "a": "6",
+      "b": "3",
+      "c": "5",
+      "d": "7"
     },
     "correctAnswer" : "optionC"
   }

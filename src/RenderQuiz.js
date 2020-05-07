@@ -29,6 +29,7 @@ const RenderQuiz = (props) => {
 
   const resetQuiz = () => {
     props.updateActiveItem(1);
+    props.updateResult('');
   }
 
     return (
