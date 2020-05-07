@@ -9,14 +9,14 @@ import * as serviceWorker from './serviceWorker';
 const data = [
   {
     "question": 1,
-    "description": "this is question 1",
+    "description": "Yo vivo en_____________",
     "options": {
-      "a": "question1 option a",
-      "b": "question1 option b",
-      "c": "question1 option c",
-      "d": "question1 option d"
+      "a": "Panama",
+      "b": "Estados Unidos",
+      "c": "Turrialba",
+      "d": "Costa Rica"
     },
-    "correctAnswer" : "optionA"
+    "correctAnswer" : "optionD"
   },
   {
     "question": 2,
