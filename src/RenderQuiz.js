@@ -37,7 +37,10 @@ const RenderQuiz = (props) => {
           return(
             <div key={d.question} style={{display: props.activeItem === d.question ? 'block' : 'none'}}>
               <p>{d.question}. {d.description}</p>
-
+                {
+                  d.question === 3 ? <img src={d.image.url} alt={d.image.description}/>
+                : <></>
+                }
                    <div>
                     <input type="radio" id="option1" name={d.question} value={d.question}
                       checked={props.currentChecked === "optionA" && props.activeItem === d.question}

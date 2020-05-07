@@ -38,7 +38,11 @@ const data = [
       "c": "Estremidades superiores",
       "d": "tronco"
     },
-    "correctAnswer" : "optionA"
+    "correctAnswer" : "optionA",
+    "image": {
+      "url" : "images/cuerpo.jpg",
+      "description" : "El cuerpo humano"
+    },
   },
   {
     "question": 4,
