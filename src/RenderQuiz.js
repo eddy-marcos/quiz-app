@@ -38,7 +38,7 @@ const RenderQuiz = (props) => {
             <div key={d.question} style={{display: props.activeItem === d.question ? 'block' : 'none'}}>
               <p>{d.question}. {d.description}</p>
                 {
-                  d.question === 3 ? <img src={d.image.url} alt={d.image.description}/>
+                  d.question === 1 ? <img src={d.image.url} alt={d.image.description}/>
                 : <></>
                 }
                    <div>

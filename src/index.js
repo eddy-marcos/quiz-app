@@ -9,62 +9,62 @@ import * as serviceWorker from './serviceWorker';
 const data = [
   {
     "question": 1,
-    "description": "La suma de 8 + 2 es?",
+    "description": "Cuántos minutos hay en una hora?",
     "options": {
-      "a": "8",
-      "b": "7",
-      "c": "10",
-      "d": "11"
+      "a": "40",
+      "b": "35",
+      "c": "60",
+      "d": "10"
+    },
+    "image": {
+      "url" : "/quiz-app/images/reloj.png",
+      "description" : "reloj"
     },
     "correctAnswer" : "optionC"
   },
   {
     "question": 2,
-    "description": "Para comer utilizo el sentido de_____",
+    "description": "Que planeta está mas cerca del sol?",
     "options": {
-      "a": "olfato",
-      "b": "audición",
-      "c": "vista",
-      "d": "gusto"
+      "a": "Venus",
+      "b": "Mercurio",
+      "c": "Tierra",
+      "d": "Plutón"
     },
-    "correctAnswer" : "optionD"
+    "correctAnswer" : "optionB"
   },
   {
     "question": 3,
-    "description": "En que parte del cuerpo están las piernas?",
+    "description": "Complete: one, two, three, four, five, six, seven, ___ , nine, ten",
     "options": {
-      "a": "Estremidades Inferiores",
-      "b": "Cabeza",
-      "c": "Estremidades superiores",
-      "d": "tronco"
+      "a": "eight",
+      "b": "eleven",
+      "c": "three",
+      "d": "five"
     },
-    "correctAnswer" : "optionA",
-    "image": {
-      "url" : "images/cuerpo.jpg",
-      "description" : "El cuerpo humano"
-    },
+    "correctAnswer" : "optionA"
   },
   {
     "question": 4,
-    "description": "Complete la palabra. Cu__po",
+    "description": "¿Qué significa que dos palabras sean sinónimos?",
     "options": {
-      "a": "la",
-      "b": "ez",
-      "c": "do",
-      "d": "er"
+      "a": "significan algo diferente",
+      "b": "que son palabras muy largas",
+      "c": "que son palabras bonitas",
+      "d": "tienen un mismo significado pero se escriben diferente."
     },
     "correctAnswer" : "optionD"
   },
   {
     "question": 5,
-    "description": "My name is____",
+    "description": "Si a 10 le resto 3, cuál es el resultado?",
     "options": {
-      "a": "Meybel",
-      "b": "Aaron",
-      "c": "Eddy",
-      "d": "María"
+      "a": "7",
+      "b": "5",
+      "c": "2",
+      "d": "8"
     },
-    "correctAnswer" : "optionB"
+    "correctAnswer" : "optionA"
   }
 ]
 
