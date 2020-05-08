@@ -40,3 +40,7 @@ button {
 img {
   margin-bottom: 20px;
 }
+
+.hidden {
+  display: none;
+}
