@@ -36,7 +36,7 @@ const RenderQuiz = (props) => {
       props.state.map(d => {
           return(
             <div key={d.question} className={props.activeItem === d.question ? '' : 'hidden'}>
-              <p>{d.question}. {d.description}</p>
+              <b><p>{d.question}. {d.description}</p></b>
                 {
                   d.question === 1 ? <img src={d.image.url} alt={d.image.description}/>
                 : <></>

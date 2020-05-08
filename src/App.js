@@ -10,12 +10,13 @@ class App extends React.Component {
       quizes: [],
       checkedRadio: 'optionA',
       result: '',
-      activeQuestion: 1
+      activeQuestion: 0
     }
 
     this.updateRadioState = this.updateRadioState.bind(this);
     this.updateResult = this.updateResult.bind(this);
     this.updateActiveQuestion = this.updateActiveQuestion.bind(this);
+    this.startQuiz = this.startQuiz.bind(this);
   }
 
   componentDidMount() {
@@ -42,12 +43,29 @@ class App extends React.Component {
     });
   }
 
+  startQuiz(){
+    this.setState({activeQuestion : 1});
+  }
+
   render(){
     return (
       <div className="container">
-       <h1>Bienvenido al Quiz</h1>
-        <section>
-          <p>Selecciona una opción:</p>
+
+        {
+          this.state.activeQuestion === 0 ?
+          <div>
+            <h1>Bienvenido al Quiz</h1>
+            <p><b>Instrucciones generales:</b><br/><br/>
+              Selecciona una opción y toca en "Listo" para ver el resultado.<br/>
+            Toca "Siguiente" para avanzar a la siguiente pregunta,
+              y "Otra vez" para volver a empezar.
+            </p>
+
+            <button className="start-btn" onClick={this.startQuiz}>Comenzar</button>
+          </div> : <></>
+        }
+
+        <section className="question-content">
           <RenderQuiz
             state={this.state.quizes}
             updateChecked={this.updateRadioState}

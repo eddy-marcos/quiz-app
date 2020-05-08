@@ -11,11 +11,13 @@ https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties
   --yellow: #ffe277;
   --orange: #ffb367;
   --pink: #ffe2bc;
+  --white: #fff;
 }
 
 body {
+  font-size: 25px;
   font-family: 'Inconsolata', monospace;
-  background-color: #707070;
+  background-color: #000;
   margin-left: 20px;
 }
 
@@ -24,17 +26,25 @@ h1 {
 }
 
 section {
-  color: #fff;
-  font-size: 25px;
+  color: var(--white);
 }
 
 button {
-  color: #fff;
+  color: var(--white);
   font-family: inherit;
   font-weight: bolder;
+  font-size: 12px;
   margin: 20px 20px 20px 0;
   padding: 10px 20px;
   background-color: #58b4ae;
+}
+
+.start-btn {
+  font-size: inherit;
+}
+
+p {
+  color: var(--white);
 }
 
 img {
