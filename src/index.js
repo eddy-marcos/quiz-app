@@ -42,6 +42,10 @@ const data = [
       "c": "three",
       "d": "five"
     },
+    "image": {
+      "url" : "/quiz-app/images/numeros.jpg",
+      "description" : "numeros"
+    },
     "correctAnswer" : "optionA"
   },
   {
