@@ -74,8 +74,15 @@ const RenderQuiz = (props) => {
                     <button className="submit-btn"
                       onClick={event => handleSubmit(event, d.correctAnswer)}
                       >Listo</button>
-                    <button className="next-btn" onClick={handleNext}>Siguiente</button>
-                    <button className="reset-btn" onClick={resetQuiz}>Otra Vez</button>
+
+                    {/*hide "next" button on last question*/}
+                    {
+                      props.activeItem !== props.state.length ?
+                      <button className="next-btn" onClick={handleNext}>Siguiente</button>
+                      : <></>
+                    }
+
+                  <button className="reset-btn" onClick={resetQuiz}>Otra Vez</button>
                 </div>
                   <span className="result">{props.currentResult}</span>
         </div>
