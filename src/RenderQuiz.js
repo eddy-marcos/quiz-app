@@ -6,30 +6,27 @@ const RenderQuiz = (props) => {
     props.updateChecked(option);
   }
 
-   const handleSubmit = (event, answer) => {
-      event.preventDefault();
-
-      if (props.currentChecked === answer) {
-        // console.log('true');
-        props.updateResult('Excelente! :)');
-        return true;
-      }
-
-      // console.log('false');
-      props.updateResult('Intenta de nuevo.');
-      return false;
-  }
-
-  const handleNext = () => {
+  const handleNext = (answer) => {
     if (props.activeItem < props.state.length) {
       props.updateActiveItem(props.activeItem+1);
-      props.updateResult('');
     }
+
+      props.updateChecked("");
+
+    if (props.currentChecked === answer && props.currentChecked !== '') {
+      props.updateScore(props.currentScore+1);
+      return true;
+    }
+
+    return false;
   }
 
   const resetQuiz = () => {
     props.updateActiveItem(1);
-    props.updateResult('');
+  }
+
+  const getResult = () => {
+    console.log('result');
   }
 
     return (
@@ -71,20 +68,23 @@ const RenderQuiz = (props) => {
                   </div>
 
                   <div>
-                    <button className="submit-btn"
-                      onClick={event => handleSubmit(event, d.correctAnswer)}
-                      >Listo</button>
 
                     {/*hide "next" button on last question*/}
                     {
-                      props.activeItem !== props.state.length ?
-                      <button className="next-btn" onClick={handleNext}>Siguiente</button>
+                      props.activeItem !== props.state.length && props.currentChecked !== ''?
+                      <button className="next-btn" onClick={e => handleNext(d.correctAnswer)}>Siguiente</button>
                       : <></>
                     }
 
-                  <button className="reset-btn" onClick={resetQuiz}>Otra Vez</button>
+                    {
+                      props.activeItem === props.state.length ?
+                      <>
+                        <button className="reset-btn" onClick={resetQuiz}>Otra Vez</button>
+                        <button className="result-btn" onClick={getResult}>Ver Resultado</button>
+                      </>
+                      : <></>
+                    }
                 </div>
-                  <span className="result">{props.currentResult}</span>
         </div>
           )
         })

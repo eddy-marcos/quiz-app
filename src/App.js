@@ -8,15 +8,15 @@ class App extends React.Component {
 
     this.state = {
       quizes: [],
-      checkedRadio: 'optionA',
-      result: '',
-      activeQuestion: 0
+      checkedRadio: '',
+      activeQuestion: 0,
+      score: 0
     }
 
     this.updateRadioState = this.updateRadioState.bind(this);
-    this.updateResult = this.updateResult.bind(this);
     this.updateActiveQuestion = this.updateActiveQuestion.bind(this);
     this.startQuiz = this.startQuiz.bind(this);
+    this.updateScore = this.updateScore.bind(this);
   }
 
   componentDidMount() {
@@ -31,12 +31,6 @@ class App extends React.Component {
     });
   }
 
-   updateResult(result){
-    this.setState({
-      result
-    });
-  }
-
   updateActiveQuestion(question){
     this.setState({
      activeQuestion : question
@@ -45,6 +39,10 @@ class App extends React.Component {
 
   startQuiz(){
     this.setState({activeQuestion : 1});
+  }
+
+  updateScore(score){
+    this.setState({score});
   }
 
   render(){
@@ -70,8 +68,8 @@ class App extends React.Component {
             state={this.state.quizes}
             updateChecked={this.updateRadioState}
             currentChecked={this.state.checkedRadio}
-            currentResult={this.state.result}
-            updateResult={this.updateResult}
+            currentScore={this.state.score}
+            updateScore={this.updateScore}
             activeItem={this.state.activeQuestion}
             updateActiveItem={this.updateActiveQuestion}
             />
