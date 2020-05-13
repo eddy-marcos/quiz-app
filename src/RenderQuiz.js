@@ -7,7 +7,7 @@ const RenderQuiz = (props) => {
   }
 
   const handleNext = (answer) => {
-    if (props.activeItem < props.state.length) {
+    if (props.activeItem <= props.state.length) {
       props.updateActiveItem(props.activeItem+1);
     }
 
@@ -19,14 +19,6 @@ const RenderQuiz = (props) => {
     }
 
     return false;
-  }
-
-  const resetQuiz = () => {
-    props.updateActiveItem(1);
-  }
-
-  const getResult = () => {
-    console.log('result');
   }
 
     return (
@@ -69,19 +61,9 @@ const RenderQuiz = (props) => {
 
                   <div>
 
-                    {/*hide "next" button on last question*/}
                     {
-                      props.activeItem !== props.state.length && props.currentChecked !== ''?
+                      props.currentChecked !== ''?
                       <button className="next-btn" onClick={e => handleNext(d.correctAnswer)}>Siguiente</button>
-                      : <></>
-                    }
-
-                    {
-                      props.activeItem === props.state.length ?
-                      <>
-                        <button className="reset-btn" onClick={resetQuiz}>Otra Vez</button>
-                        <button className="result-btn" onClick={getResult}>Ver Resultado</button>
-                      </>
                       : <></>
                     }
                 </div>

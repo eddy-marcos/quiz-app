@@ -45,7 +45,21 @@ class App extends React.Component {
     this.setState({score});
   }
 
+   resetQuiz() {
+    if (window.confirm("Seguro que quieres comenzar otra vez?")) {
+      this.setState({
+       activeQuestion : 1
+      });
+    } else return false;
+  }
+
+   getResult() {
+    console.log('result');
+  }
+
   render(){
+    const yourScore = (this.state.score / this.state.quizes.length) * 100;
+
     return (
       <div className="container">
 
@@ -74,6 +88,19 @@ class App extends React.Component {
             updateActiveItem={this.updateActiveQuestion}
             />
         </section>
+
+        <div className="results" style={{color: 'red'}}>
+            {yourScore.toString()}
+        </div>
+
+        {
+          this.state.activeQuestion > this.state.quizes.length ?
+          <>
+            <button className="reset-btn" onClick={this.resetQuiz}>Otra Vez</button>
+            <button className="result-btn" onClick={this.getResult}>Ver Resultado</button>
+          </>
+          : <></>
+        }
       </div>
     );
 
