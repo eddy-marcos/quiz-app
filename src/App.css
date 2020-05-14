@@ -14,11 +14,21 @@ https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties
   --white: #fff;
 }
 
+html {
+height: 100%;
+background-color: #000;
+}
+
 body {
-  font-size: 25px;
   font-family: 'Inconsolata', monospace;
-  background-color: #000;
-  margin-left: 20px;
+  height: 100%;
+}
+
+.landing {
+  background-image: url("/quiz-app/images/landing.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 5px 0 50% 30px;
 }
 
 h1 {
@@ -29,7 +39,7 @@ section {
   color: var(--white);
 }
 
-button {
+.btn {
   color: var(--white);
   font-family: inherit;
   font-weight: bolder;
@@ -43,7 +53,7 @@ button {
   font-size: inherit;
 }
 
-p {
+p, h3 {
   color: var(--white);
 }
 
@@ -53,4 +63,24 @@ img {
 
 .hidden {
   display: none;
+}
+
+/*font sizes*/
+html {
+  font-size: 25px;
+}
+@media screen and (min-width: 320px) {
+  html {
+    font-size: calc(25px + 6 * ((100vw - 320px) / 680));
+  }
+}
+@media screen and (min-width: 768px) {
+  html {
+    font-size: 30px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  html {
+    font-size: 35px;
+  }
 }

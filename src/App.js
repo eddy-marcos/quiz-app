@@ -56,15 +56,16 @@ class App extends React.Component {
 
         {
           this.state.activeQuestion === 0 ?
-          <div>
+          <div className="landing">
             <h1>Bienvenido al Quiz</h1>
-            <p><b>Instrucciones generales:</b><br/><br/>
-              Selecciona una opción y toca en "Listo" para ver el resultado.<br/>
-            Toca "Siguiente" para avanzar a la siguiente pregunta,
-              y "Otra vez" para volver a empezar.
-            </p>
+            <h3><b>Instrucciones generales:</b></h3>
 
-            <button className="start-btn" onClick={this.startQuiz}>Comenzar</button>
+            <p className="instructions">
+              Selecciona la respuesta correcta y toca "Siguiente" para continuar.<br/><br/>
+            El Quiz consta de {this.state.quizes.length} preguntas y al final podrás saber el resultado
+              de la prueba. Muchos Éxitos!
+            </p>
+            <button className="start-btn btn" onClick={this.startQuiz}>Comenzar</button>
           </div> : <></>
         }
 
@@ -94,7 +95,7 @@ class App extends React.Component {
               </div>
             }
 
-            <button className="reset-btn" onClick={this.startQuiz}>Otra Vez</button>
+            <button className="reset-btn btn" onClick={this.startQuiz}>Otra Vez</button>
           </>
           : <></>
         }

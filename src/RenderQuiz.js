@@ -63,7 +63,7 @@ const RenderQuiz = (props) => {
 
                     {
                       props.currentChecked !== ''?
-                      <button className="next-btn" onClick={e => handleNext(d.correctAnswer)}>Siguiente</button>
+                      <button className="next-btn btn" onClick={e => handleNext(d.correctAnswer)}>Siguiente</button>
                       : <></>
                     }
 
