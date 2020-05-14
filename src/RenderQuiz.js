@@ -66,6 +66,11 @@ const RenderQuiz = (props) => {
                       <button className="next-btn" onClick={e => handleNext(d.correctAnswer)}>Siguiente</button>
                       : <></>
                     }
+
+                </div>
+
+                <div className="pagination" style={{color: 'yellow', marginTop: '20px', fontSize: '20px'}}>
+                  Pregunta {props.activeItem} de {props.state.length}
                 </div>
         </div>
           )

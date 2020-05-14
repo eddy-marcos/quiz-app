@@ -38,23 +38,14 @@ class App extends React.Component {
   }
 
   startQuiz(){
-    this.setState({activeQuestion : 1});
+    this.setState({
+      activeQuestion : 1,
+      score: 0
+    });
   }
 
   updateScore(score){
     this.setState({score});
-  }
-
-   resetQuiz() {
-    if (window.confirm("Seguro que quieres comenzar otra vez?")) {
-      this.setState({
-       activeQuestion : 1
-      });
-    } else return false;
-  }
-
-   getResult() {
-    console.log('result');
   }
 
   render(){
@@ -89,15 +80,21 @@ class App extends React.Component {
             />
         </section>
 
-        <div className="results" style={{color: 'red'}}>
-            {yourScore.toString()}
-        </div>
-
         {
           this.state.activeQuestion > this.state.quizes.length ?
           <>
-            <button className="reset-btn" onClick={this.resetQuiz}>Otra Vez</button>
-            <button className="result-btn" onClick={this.getResult}>Ver Resultado</button>
+            {
+              yourScore >= 70 ?
+              <div className="good-score" style={{color: 'red'}}>
+                Felicidades!! Has pasado el quiz, tu nota es: {yourScore.toString()}%
+              </div>
+              :
+              <div className="bad-score" style={{color: 'red'}}>
+                Lo siento no has aprobado el quiz, tu nota es: {yourScore.toString()}%
+              </div>
+            }
+
+            <button className="reset-btn" onClick={this.startQuiz}>Otra Vez</button>
           </>
           : <></>
         }
