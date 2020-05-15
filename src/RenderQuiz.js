@@ -62,8 +62,13 @@ const RenderQuiz = (props) => {
                   <div>
 
                     {
-                      props.currentChecked !== ''?
+                      props.currentChecked !== '' && props.activeItem < props.state.length ?
                       <button className="next-btn btn" onClick={e => handleNext(d.correctAnswer)}>Siguiente</button>
+                      : <></>
+                    }
+                    {
+                      props.currentChecked !== '' && props.activeItem === props.state.length ?
+                      <button className="finish-btn btn" onClick={e => handleNext(d.correctAnswer)}>Finalizar Quiz y Ver Resultado</button>
                       : <></>
                     }
 

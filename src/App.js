@@ -1,5 +1,6 @@
 import React from 'react';
-import './App.css';
+import './styles/App.css';
+// import './styles/loader.css';
 import RenderQuiz from './RenderQuiz';
 
 class App extends React.Component {
@@ -83,10 +84,10 @@ class App extends React.Component {
 
         {
           this.state.activeQuestion > this.state.quizes.length ?
-          <>
+          <div className="results-wrapper">
             {
               yourScore >= 70 ?
-              <div className="good-score" style={{color: 'red'}}>
+              <div className="good-score" style={{color: 'green'}}>
                 Felicidades!! Has pasado el quiz, tu nota es: {yourScore.toString()}%
               </div>
               :
@@ -96,7 +97,9 @@ class App extends React.Component {
             }
 
             <button className="reset-btn btn" onClick={this.startQuiz}>Otra Vez</button>
-          </>
+          {/*  <div className="loader"></div>
+            <div style={{color: "#fff"}}>Calculando resultado...</div> */}
+        </div>
           : <></>
         }
       </div>
